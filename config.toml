@@ -1,0 +1,80 @@
+baseURL = "https://dsi-senat.github.io/dsi-senat/"
+languageCode = "fr-fr"
+defaultContentLanguage = "fr"
+title = "Travailler au pôle documentaire de la DSI du Sénat - Que fait un ingénieur-développeur chez nous ?"
+theme = "dream"
+#relativeURLs = true
+canonifyURLs = true
+
+copyright = "Le contenu de ce site ne peut être ré-utilisé qu'après autorisation. Merci d'écrire à s.dubourg@senat.fr si besoin."
+
+Paginate = 20
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+# https://gohugo.io/news/0.60.0-relnotes/
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[params]
+  background = "#fff"
+  backgroundImage = "/dsi-senat/dsi/background.jpg"
+  linkColor = "seagreen"
+  contentLink = true
+  contentLinkText = "Lire l'article..."
+
+  # dark mode
+  # defaultDark = true
+  # backgroundDark = "#222"
+  #backgroundImageDark = "/dsi/background.jpg"
+  darkLinkColor = "darkseagreen"
+  # darkNav = true
+  # dark404 = true
+
+  #images = ["me/background.jpg"]
+
+  author = "dsi-docu"
+  description = "DSI-docu"
+  avatar = "/dsi/dsi-docu.jpg"
+  headerTitle = "DSI-docu"
+  motto = "Travailler au pôle documentaire de la DSI du Sénat - Que fait un ingénieur-développeur chez nous ?"
+  # maxTags = 5
+
+  # footerBottomText = ""
+
+  rss = true
+
+  email = "sebastien@dubourg.name"
+  github = "dsi-senat"
+
+  siteStartYear = 2021
+
+  favicon = "/favicon.ico"
+
+  #highlightjs = true
+  # highlightjsCDN = "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js"
+  #highlightjsExtraLanguages = ["clojure", "ocaml"]
+  #highlightjsTheme = "tomorrow"
+  #highlightjsThemeDark = "tomorrow-night"
+
+  # search
+  enableSearch = true
+
+  # options
+  showSummaryCoverInPost = true
+  # hasTwitterEmbed = true
+  # reversePostAndAside = true
+  # shareInAside = true
+
+  [params.advanced]
+    customCSS = ["css/custom.css"]
+    customJS = []
+
+  [params.experimental]
+    jsDate = true
+    jsDateFormat = "yyyy-MM-dd"
+    #jsDateFormat = "yyyy年MM月dd日"
+    # jsDateFormat = "yyyy年MM月dd日，cccc"
