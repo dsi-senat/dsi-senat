@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Organisation on Travailler au pôle documentaire de la DSI du Sénat - Que fait un ingénieur-développeur chez nous ?</title>
+    <link>https://dsi-senat.github.io/dsi-senat/categories/organisation/</link>
+    <description>Recent content in Organisation on Travailler au pôle documentaire de la DSI du Sénat - Que fait un ingénieur-développeur chez nous ?</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    <copyright>Le contenu de ce site ne peut être ré-utilisé qu&#39;après autorisation. Merci d&#39;écrire à s.dubourg@senat.fr si besoin.</copyright>
+    <lastBuildDate>Wed, 01 Sep 2021 16:39:00 +0200</lastBuildDate><atom:link href="https://dsi-senat.github.io/dsi-senat/categories/organisation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Travailler pour le Sénat</title>
+      <link>https://dsi-senat.github.io/dsi-senat/posts/senat/</link>
+      <pubDate>Tue, 08 Jun 2021 17:24:06 +0200</pubDate>
+      
+      <guid>https://dsi-senat.github.io/dsi-senat/posts/senat/</guid>
+      <description>&lt;p&gt;Le Sénat constitue avec l&amp;rsquo;Assemblée Nationale le parlement français. Qu&amp;rsquo;est-ce
+que cela signifie ?&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Être ingénieur au sein de la DSI</title>
+      <link>https://dsi-senat.github.io/dsi-senat/posts/dsi/</link>
+      <pubDate>Wed, 09 Jun 2021 17:24:06 +0200</pubDate>
+      
+      <guid>https://dsi-senat.github.io/dsi-senat/posts/dsi/</guid>
+      <description>&lt;p&gt;La DSI du Sénat compte aujourd&amp;rsquo;hui plus de cinquante personnes, majoritairement
+des ingénieurs informatiques. Ell est organisée principalement autour de deux
+divisions :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;la division des applications informatiques;&lt;/li&gt;
+&lt;li&gt;la division des équipements, de l&amp;rsquo;administration et de la sécurité des systèmes d&amp;rsquo;information.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Quelles sont les équipes et quels sont leurs rôles  ?&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Faire vivre le système d&#39;information</title>
+      <link>https://dsi-senat.github.io/dsi-senat/posts/si/</link>
+      <pubDate>Wed, 09 Jun 2021 17:24:06 +0200</pubDate>
+      
+      <guid>https://dsi-senat.github.io/dsi-senat/posts/si/</guid>
+      <description>&lt;p&gt;L&amp;rsquo;équipe documentaire a notamment pour mission de définir et
+de faire vivre sur le long terme le système d&amp;rsquo;information, qui permet au Sénat
+d&amp;rsquo;accomplir ses missions institutionnelles et de remplir son obligation de
+publicité vis à vis des citoyens.&lt;/p&gt;
+&lt;p&gt;Comment se traduit concrètement cette nécessité de suivi sur la durée ?&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Coproduire avec les utilisateurs</title>
+      <link>https://dsi-senat.github.io/dsi-senat/posts/coproduction/</link>
+      <pubDate>Fri, 09 Jul 2021 18:14:06 +0200</pubDate>
+      
+      <guid>https://dsi-senat.github.io/dsi-senat/posts/coproduction/</guid>
+      <description>&lt;p&gt;Nos applications sont conçues et développées en
+coproduction avec nos utilisateurs. Pour le pôle documentaire, il s&amp;rsquo;agit
+principalement des directions des missions institutionnelles et de la direction
+de la communication.&lt;/p&gt;
+&lt;p&gt;Comment est organisée cette collaboration ?&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Développer autour des formats structurés</title>
+      <link>https://dsi-senat.github.io/dsi-senat/posts/structure/</link>
+      <pubDate>Wed, 09 Jun 2021 17:24:06 +0200</pubDate>
+      
+      <guid>https://dsi-senat.github.io/dsi-senat/posts/structure/</guid>
+      <description>&lt;p&gt;Les ingénieurs du pôle documentaire utilisent le plus possible des formats
+de données structurés de préférence aux formats bureautiques.&lt;/p&gt;
+&lt;p&gt;Quelle est la raison de cette stratégie et quelles en sont les illustrations ?&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Mettre en œuvre le Test driven Development</title>
+      <link>https://dsi-senat.github.io/dsi-senat/posts/tdd/</link>
+      <pubDate>Thu, 15 Jul 2021 18:39:00 +0200</pubDate>
+      
+      <guid>https://dsi-senat.github.io/dsi-senat/posts/tdd/</guid>
+      <description>&lt;p&gt;Pour ses développements, l&amp;rsquo;équipe documentaire s&amp;rsquo;efforce de mettre en place une
+méthode de tests systématiques.&lt;/p&gt;
+&lt;p&gt;Pourquoi cela ? Et comment procédons-nous ?&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Utiliser Gitlab, le couteau suisse de l&#39;ingénieur Sénat</title>
+      <link>https://dsi-senat.github.io/dsi-senat/posts/gitlab/</link>
+      <pubDate>Thu, 15 Jul 2021 18:39:00 +0200</pubDate>
+      
+      <guid>https://dsi-senat.github.io/dsi-senat/posts/gitlab/</guid>
+      <description>&lt;p&gt;L&amp;rsquo;organisation des développements s&amp;rsquo;appuie sur l&amp;rsquo;outil GitLab.&lt;/p&gt;
+&lt;p&gt;Comment est utilisé GitLab par l&amp;rsquo;équipe documentaire ?&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Collaborer à la documentation</title>
+      <link>https://dsi-senat.github.io/dsi-senat/posts/wikitn/</link>
+      <pubDate>Wed, 01 Sep 2021 16:39:00 +0200</pubDate>
+      
+      <guid>https://dsi-senat.github.io/dsi-senat/posts/wikitn/</guid>
+      <description>&lt;p&gt;Pour sa documentation, la DSI a mis en place un wiki utilisant le même moteur que
+Wikipedia.&lt;/p&gt;
+&lt;p&gt;Qu’y trouve-t-on?&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Garder ses compétences à jour</title>
+      <link>https://dsi-senat.github.io/dsi-senat/posts/veille/</link>
+      <pubDate>Thu, 15 Jul 2021 18:39:00 +0200</pubDate>
+      
+      <guid>https://dsi-senat.github.io/dsi-senat/posts/veille/</guid>
+      <description>&lt;p&gt;La veille technologique est une activité indispensable pour un
+ingénieur-informaticien.&lt;/p&gt;
+&lt;p&gt;Comment est-elle organisée dans l&amp;rsquo;équipe documentaire ?&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

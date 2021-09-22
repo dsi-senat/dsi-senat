@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SI on Travailler au pôle documentaire de la DSI du Sénat - Que fait un ingénieur-développeur chez nous ?</title>
+    <link>https://dsi-senat.github.io/dsi-senat/tags/si/</link>
+    <description>Recent content in SI on Travailler au pôle documentaire de la DSI du Sénat - Que fait un ingénieur-développeur chez nous ?</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    <copyright>Le contenu de ce site ne peut être ré-utilisé qu&#39;après autorisation. Merci d&#39;écrire à s.dubourg@senat.fr si besoin.</copyright>
+    <lastBuildDate>Thu, 15 Jul 2021 21:08:04 +0200</lastBuildDate><atom:link href="https://dsi-senat.github.io/dsi-senat/tags/si/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Faire vivre le système d&#39;information</title>
+      <link>https://dsi-senat.github.io/dsi-senat/posts/si/</link>
+      <pubDate>Wed, 09 Jun 2021 17:24:06 +0200</pubDate>
+      
+      <guid>https://dsi-senat.github.io/dsi-senat/posts/si/</guid>
+      <description>&lt;p&gt;L&amp;rsquo;équipe documentaire a notamment pour mission de définir et
+de faire vivre sur le long terme le système d&amp;rsquo;information, qui permet au Sénat
+d&amp;rsquo;accomplir ses missions institutionnelles et de remplir son obligation de
+publicité vis à vis des citoyens.&lt;/p&gt;
+&lt;p&gt;Comment se traduit concrètement cette nécessité de suivi sur la durée ?&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Déployer sur Docker / Kubernetes</title>
+      <link>https://dsi-senat.github.io/dsi-senat/posts/docker/</link>
+      <pubDate>Fri, 07 May 2021 18:30:04 +0200</pubDate>
+      
+      <guid>https://dsi-senat.github.io/dsi-senat/posts/docker/</guid>
+      <description>&lt;p&gt;Docker / Kubernetes, mise en place récemment, est la plateforme cible de nos
+applications. Cette plateforme est sous la responsabilité d&amp;rsquo;une équipe devops
+constituée par des ingénieurs des équipes de développement et de l&amp;rsquo;équipe
+système.&lt;/p&gt;
+&lt;p&gt;Comment est-elle organisée ?&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Refondre la base des sénateurs</title>
+      <link>https://dsi-senat.github.io/dsi-senat/posts/refonte-arsen/</link>
+      <pubDate>Thu, 15 Jul 2021 21:08:04 +0200</pubDate>
+      
+      <guid>https://dsi-senat.github.io/dsi-senat/posts/refonte-arsen/</guid>
+      <description>&lt;p&gt;(illustration : Le schema de principe de la refonte)&lt;/p&gt;
+&lt;p&gt;L&amp;rsquo;application/base de données Arsen qui contient toutes les données biographiques
+des sénateurs est au cœur du système d&amp;rsquo;information du Sénat. Elle alimente
+plusieurs dizaines d&amp;rsquo;application. Comment la moderniser sans provoquer
+un big bang ?&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

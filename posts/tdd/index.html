@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="fr-fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Mettre en œuvre le Test driven Development | Travailler au pôle documentaire de la DSI du Sénat - Que fait un ingénieur-développeur chez nous ?</title>
+
+    
+<link href="https://dsi-senat.github.io/dsi-senat/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+
+
+
+<meta name="author" content="LC" />
+<meta name="description" content="Pour ses développements, l&amp;rsquo;équipe documentaire s&amp;rsquo;efforce de mettre en place une méthode de tests systématiques.
+Pourquoi cela ? Et comment procédons-nous ?
+" />
+
+
+
+<meta name="generator" content="Hugo 0.88.1" />
+
+<link rel="canonical" href="https://dsi-senat.github.io/dsi-senat/posts/tdd/" />
+
+
+<meta property="og:title" content="Mettre en œuvre le Test driven Development" />
+<meta property="og:description" content="Pour ses développements, l&rsquo;équipe documentaire s&rsquo;efforce de mettre en place une
+méthode de tests systématiques.
+Pourquoi cela ? Et comment procédons-nous ?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dsi-senat.github.io/dsi-senat/posts/tdd/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-07-15T18:39:00+02:00" />
+<meta property="article:modified_time" content="2021-09-01T16:39:00+02:00" />
+
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Mettre en œuvre le Test driven Development"/>
+<meta name="twitter:description" content="Pour ses développements, l&rsquo;équipe documentaire s&rsquo;efforce de mettre en place une
+méthode de tests systématiques.
+Pourquoi cela ? Et comment procédons-nous ?"/>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+<link rel="stylesheet" href="https://dsi-senat.github.io/dsi-senat/css/icomoon.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/overlayscrollbars@1.13.1/css/OverlayScrollbars.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css">
+<link rel="stylesheet" href="https://dsi-senat.github.io/dsi-senat/css/site.css" />
+
+<style>
+  .ui.header a:not(.item, .ui.button):hover {
+    text-decoration: underline;
+  }
+
+  
+  a:not(.item, .ui.button) {
+    color: seagreen !important;
+  }
+  
+
+  
+  .inverted a:not(.item, .ui.button) {
+     color: darkseagreen !important;
+  }
+  
+
+  
+  body.default {
+    
+    background-color: #fff;
+    
+
+    
+    background-image: url(/dsi-senat/dsi/background.jpg);
+    
+  }
+  
+
+  
+</style>
+
+
+    
+
+
+
+
+
+
+
+    
+    <link rel="stylesheet" href="https://dsi-senat.github.io/dsi-senat/css/custom.css" />
+    
+  </head>
+
+  <body class="default">
+    
+<nav class="ui secondary menu dream-menu dream-nav">
+
+  <a class="item dream-flip-toggle" title="Retourne ça !">
+    <i class="large link bullseye icon"></i>
+  </a>
+  <a class="item" href="https://dsi-senat.github.io/dsi-senat/" title="Accueil">
+    <i class="large link home icon"></i>
+  </a>
+  
+  
+  <a class="item" title="Search" onclick="toggleSearch(event)">
+    <i class="large link search icon"></i>
+  </a>
+  
+</nav>
+
+    <div class="flip-container">
+      <div class="flipper">
+        <section class="front">
+          <div class="dream-max-width">
+            
+<div class="ui relaxed centered grid dream-grid dream-grid-single">
+  
+  
+  
+  
+
+  
+  <div class="sixteen wide mobile sixteen wide tablet ten wide computer column markdown-body dream-single" id="dream-save-post-as-img">
+    <section class="ui top attached segment">
+      <header>
+        <h1 class="ui large header">Mettre en œuvre le Test driven Development<span class="sub header">
+            <span class="left">
+              @
+              
+                
+                  LC
+                
+              
+
+              | 
+                  <span data-format="luxon">2021-07-15T18:39:00&#43;02:00</span>
+                
+
+              | 3 minutes de lecture
+
+              
+              | Mise à jour le
+                
+                  <span data-format="luxon">2021-09-01T16:39:00&#43;02:00</span>
+                
+              
+            </span>
+
+            
+            <span class="dream-share">
+  <a href="#" class="save-as-image" title="Enregistrer sous forme d&#39;image" onclick="savePostAsImg()">
+    <i class="save icon"></i>
+  </a>
+  <a href="https://twitter.com/intent/tweet?text=Mettre%20en%20%c5%93uvre%20le%20Test%20driven%20Development&url=https%3a%2f%2fdsi-senat.github.io%2fdsi-senat%2fposts%2ftdd%2f" title="Twitter">
+    <i class="twitter icon"></i>
+  </a>
+  <a href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fdsi-senat.github.io%2fdsi-senat%2fposts%2ftdd%2f" title="Facebook">
+    <i class="facebook icon"></i>
+  </a>
+</span>
+
+            
+          </span>
+        </h1>
+      </header>
+
+      <article class="main">
+        
+        <img class="cover" src="https://dsi-senat.github.io/dsi-senat/img/cycle-global-tdd.png" />
+        
+
+        <p>Pour ses développements, l&rsquo;équipe documentaire s&rsquo;efforce de mettre en place une
+méthode de tests systématiques.</p>
+<p>Pourquoi cela ? Et comment procédons-nous ?</p>
+<p>L&rsquo;intérêt des tests automatisés dans le cadre d&rsquo;applications métier qui vont évoluer et être maintenues pendant des
+années n&rsquo;est plus à démontrer :</p>
+<ul>
+<li>ils documentent les fonctionnalités métier de manière pratique et complète, et facilitent ainsi la rotation des
+développeurs et la capacité à intervenir sur du code qui n&rsquo;est pas le sien,</li>
+<li>ils limitent les régressions fonctionnelles, toujours très mal supportées par les utilisateurs,</li>
+<li>ils encouragent des architectures de code maintenables : le découplage par exemple</li>
+</ul>
+<p>Cela fait quelque temps que la pratique est encouragée dans nos équipes de développement, avec un suivi
+au niveau de <a href="https://dsi-senat.github.io/dsi-senat/posts/gitlab/">l&rsquo;intégration continue</a> ou de
+<a href="https://www.sonarqube.org/">notre plateforme qualité sonarqube</a>. Et nous avons, comme d&rsquo;autres, constaté certaines
+difficultés avec nos jeux de tests. En particulier s&rsquo;assurer de ne pas oublier de tester certaines fonctionnalités
+essentielles, et surtout être sûr que nos tests sont bien écrits et vont vraiment nous avertir si le code applicatif
+dérive dans le futur. Ce second point est beaucoup plus difficile qu&rsquo;il n&rsquo;y paraît et la seule assurance (au moins à
+court terme) reste de changer le code applicatif pour voir le test planter avant de le remettre en place, ce qui est
+évidemment chronophage et insatisfaisant.</p>
+<p>Depuis quelque temps, nous expérimentons le <em>développement piloté par les tests</em> ou
+<span lang="en"><em>test driven development</em></span>. Le principe consiste à <strong>ne pas écrire de nouveau code applicatif
+tant qu&rsquo;on n&rsquo;a pas au moins un test en échec</strong>. Dit autrement, on ne change pas le code tant qu&rsquo;on n&rsquo;a pas un test qui
+prouve la nécessité de le changer. Le processus d&rsquo;écriture d&rsquo;une nouvelle fonctionnalité va donc être le suivant :</p>
+<ol>
+<li>écrire un test, qui doit être en échec : on se donne ainsi une chance que le test soit bien écrit et puisse
+nous alerter dans le futur si la fonctionnalité régresse,</li>
+<li>écrire le code applicatif <em>le plus simple possible</em> (c&rsquo;est important !) pour que l&rsquo;ensemble des tests déjà écrits
+passent. Il faut ici éviter d&rsquo;anticiper sur les futurs tests pas encore écrits pour pouvoir les vérifier en
+erreur eux-aussi lors de leur écriture.</li>
+<li>Une fois que l&rsquo;ensemble du jeu de tests existant passe, on peut procéder au remaniement du code applicatif existant.</li>
+</ol>
+<p>Ce nouveau mode d&rsquo;écriture de code répond assez directement aux deux problématiques visées. Et nous avons pu constater
+par ailleurs, ce que nous n&rsquo;avions pas forcément envisagé, qu&rsquo;il encourage une architecture de code plus simple en
+insistant sur les petits pas progressifs plutôt que sur l&rsquo;usine à gaz qui anticipe souvent des besoins qui ne viendront
+jamais.</p>
+<p>S&rsquo;il est relativement facile à mettre en place lorsque les fonctionnalités sont assez bien balisées, il est parfois
+difficile à mettre en place lors d&rsquo;expérimentations fonctionnelles. Dans ce cas, on peut avoir tendance à repasser sur
+des tests <em>a posteriori</em> mais on constate que la pratique du <abbr lang="en" title="Test Driven Development">TDD</abbr>
+a quand même largement changé nos habitudes et que la vérification de ses tests en intervenant ponctuellement sur le
+code applicatif est devenue plus naturelle.</p>
+<hr>
+<p>Schéma : source
+<a href="https://upload.wikimedia.org/wikipedia/commons/0/0b/TDD_Global_Lifecycle.png">Wikipedia</a> - Xarawn - Own work - <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></p>
+      </article>
+    </section>
+
+    
+
+    
+
+    
+  </div>
+</div>
+
+
+            <footer class="ui basic center aligned segment" style="background-color: transparent;">
+              
+              <p>© 2021 Travailler au pôle documentaire de la DSI du Sénat - Que fait un ingénieur-développeur chez nous ?</p>
+              
+
+              <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/g1eny0ung/hugo-theme-dream" target="_blank">Dream</a>.</p>
+
+              
+            </footer>
+          </div>
+        </section>
+        <section class="back">
+          <div class="dream-max-width">
+            <header class="ui basic very padded segment dream-header">
+  
+  <div class="ui small circular image">
+    <img src="https://dsi-senat.github.io/dsi-senat/dsi/dsi-docu.jpg" alt="avatar" />
+  </div>
+  
+
+  <div class="content">
+    <h1 class="ui medium header">DSI-docu<span class="sub header">Travailler au pôle documentaire de la DSI du Sénat - Que fait un ingénieur-développeur chez nous ?</span>
+    </h1>
+
+    <article class="ui horizontal list">
+      
+      <a class="item" href="https://dsi-senat.github.io/dsi-senat/posts">
+        <i class="archive icon" title="Archives"></i>
+      </a>
+      
+      <a class="item" href="https://dsi-senat.github.io/dsi-senat/categories">
+        <i class="th list icon" title="Toutes les catégories"></i>
+      </a>
+      <a class="item" href="https://dsi-senat.github.io/dsi-senat/tags">
+        <i class="tags icon" title="Tous les étiquettes"></i>
+      </a>
+    </article>
+
+    
+    
+    
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+
+    
+
+    
+    
+    
+          <div class="dream-tags">
+          
+          
+          
+            <a class="ui label" href="https://dsi-senat.github.io/dsi-senat/tags/application/" title="Application">
+              Application
+            </a>
+          
+          
+          
+            <a class="ui label" href="https://dsi-senat.github.io/dsi-senat/tags/institution/" title="institution">
+              institution
+            </a>
+          
+          
+          
+            <a class="ui label" href="https://dsi-senat.github.io/dsi-senat/tags/m%C3%A9thode/" title="méthode">
+              méthode
+            </a>
+          
+          
+          
+            <a class="ui label" href="https://dsi-senat.github.io/dsi-senat/tags/organigramme/" title="organigramme">
+              organigramme
+            </a>
+          
+          
+          
+            <a class="ui label" href="https://dsi-senat.github.io/dsi-senat/tags/prix/" title="prix">
+              prix
+            </a>
+          
+          
+          
+            <a class="ui label" href="https://dsi-senat.github.io/dsi-senat/tags/si/" title="SI">
+              SI
+            </a>
+          
+          
+          
+            <a class="ui label" href="https://dsi-senat.github.io/dsi-senat/tags/structure/" title="Structure">
+              Structure
+            </a>
+          
+          </div>
+    
+
+    
+  </div>
+</header>
+
+
+<div class="ui relaxed grid dream-grid dream-back">
+  
+  
+  
+  <div class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
+    <article class="ui segment markdown-body">
+      <div class="ui medium header">DSI-docu</div>
+      <p>Ce site est réalisé par l&rsquo;équipe documentaire de la DSI du Sénat. Il présente l&rsquo;activité d&rsquo;un ingénieur-développeur en
+son sein à travers la description des méthodes de travail et de quelques projets emblématiques sur lesquels il pourra
+travailler.</p>
+<p>Pout tout renseignement, vous pouvez écrire à <a href="mailto:s.dubourg@senat.fr">s.dubourg@senat.fr</a></p>
+
+    </article>
+  </div>
+  
+  <div class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
+    <article class="ui segment markdown-body">
+      <div class="ui medium header">Credits</div>
+      <p>Merci aux personnes dont les contributions nous ont été utiles pour la réalisation ce ce site.</p>
+<ul>
+<li>L'<a href="https://dsi-senat.github.io/dsi-senat/dsi/background.jpg">image de fond</a> est (c) Sénat.</li>
+<li>Le modèle de page, <a href="https://github.com/g1eny0ung/hugo-theme-dream">dream</a>,
+a été réalisé par <a href="https://g1eny0ung.site/">杨钺</a>, merci à lui pour sa
+réactivité.</li>
+<li>Le générateur de pages statiques est <a href="https://gohugo.io/">Hugo</a>, logiciel
+libre.</li>
+<li>L&rsquo;hébergeur est <a href="https://github.com/">Github</a>.</li>
+</ul>
+    </article>
+  </div>
+  
+
+  <div class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
+    <article class="ui segment">
+      <div class="ui medium header">Liens sociaux</div>
+      <nav class="ui secondary menu dream-menu dream-socials">
+  
+  <a class="item" href="https://dsi-senat.github.io/dsi-senat/index.xml">
+    <i class="large rss square icon" title="RSS"></i>
+  </a>
+  
+
+  
+  <a class="item" href="mailto:sebastien@dubourg.name">
+    <i class="large mail icon" title="Email"></i>
+  </a>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <a class="item" href="https://github.com/dsi-senat" target="_blank">
+    <i class="large github icon" title="GitHub"></i>
+  </a>
+  
+
+  
+
+  
+
+  
+</nav>
+
+    </article>
+  </div>
+
+  <div class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
+    
+    <article class="ui segment">
+      Le contenu de ce site ne peut être ré-utilisé qu'après autorisation. Merci d'écrire à s.dubourg@senat.fr si besoin.
+    </article>
+    
+  </div>
+
+  
+</div>
+
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+
+    
+    <div class="ui segment" id="dream-search">
+  <div class="ui search">
+    <div class="ui transparent input">
+      <input class="prompt" type="text" placeholder="Search" />
+    </div>
+    <div class="results"></div>
+  </div>
+</div>
+<script>
+  $(document).ready(function () {
+    $.getJSON('https:\/\/dsi-senat.github.io\/dsi-senat\//index.json', function (data) {
+      $('.ui.search').search({
+        source: data,
+        searchFields: ['title'],
+        showNoResults: false,
+      })
+    })
+  })
+</script>
+<script src="https://dsi-senat.github.io/dsi-senat/js/search.js"></script>
+
+    
+
+    
+
+    <script>
+  window.background = "#fff"
+  window.defaultDark =  null 
+  window.backgroundDark =  null 
+  window.backgroundImageDark =  null 
+  window.darkNav =  null 
+  window.maxTags =  null 
+  window.hasTwitterEmbed =  null 
+  window.fixedNav =  null 
+
+  if (window.hasTwitterEmbed) {
+    
+    window.twttr = (function (d, s, id) {
+      var js,
+        fjs = d.getElementsByTagName(s)[0],
+        t = window.twttr || {}
+      if (d.getElementById(id)) return t
+      js = d.createElement(s)
+      js.id = id
+      js.src = 'https://platform.twitter.com/widgets.js'
+      fjs.parentNode.insertBefore(js, fjs)
+
+      t._e = []
+      t.ready = function (f) {
+        t._e.push(f)
+      }
+
+      return t
+    })(document, 'script', 'twitter-wjs')
+  }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/overlayscrollbars@1.13.1/js/jquery.overlayScrollbars.min.js"></script>
+<script src="https://dsi-senat.github.io/dsi-senat/js/header.js"></script>
+<script src="https://dsi-senat.github.io/dsi-senat/js/main.js"></script>
+<script src="https://dsi-senat.github.io/dsi-senat/js/theme.js"></script>
+
+    
+
+
+<script src="https://cdn.jsdelivr.net/npm/luxon@1.26.0"></script>
+
+<script>
+  format()
+
+  function format() {
+    $('span[data-format="luxon"]').each(function () {
+      var date = $(this).text()
+
+      $(this).text(luxon.DateTime.fromISO(date, { locale: "fr" }).toFormat("yyyy-MM-dd"))
+    })
+  }
+</script>
+
+
+
+<script src="https://dsi-senat.github.io/dsi-senat/js/scrollToTop.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.1"></script>
+<script src="https://dsi-senat.github.io/dsi-senat/js/post.js" defer></script>
+
+
+    
+
+    
+  </body>
+</html>

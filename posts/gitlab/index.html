@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="fr-fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Utiliser Gitlab, le couteau suisse de l&#39;ingénieur Sénat | Travailler au pôle documentaire de la DSI du Sénat - Que fait un ingénieur-développeur chez nous ?</title>
+
+    
+<link href="https://dsi-senat.github.io/dsi-senat/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+
+
+
+<meta name="author" content="LC" />
+<meta name="description" content="L&amp;rsquo;organisation des développements s&amp;rsquo;appuie sur l&amp;rsquo;outil GitLab.
+Comment est utilisé GitLab par l&amp;rsquo;équipe documentaire ?
+" />
+
+
+
+<meta name="generator" content="Hugo 0.88.1" />
+
+<link rel="canonical" href="https://dsi-senat.github.io/dsi-senat/posts/gitlab/" />
+
+
+<meta property="og:title" content="Utiliser Gitlab, le couteau suisse de l&#39;ingénieur Sénat" />
+<meta property="og:description" content="L&rsquo;organisation des développements s&rsquo;appuie sur l&rsquo;outil GitLab.
+Comment est utilisé GitLab par l&rsquo;équipe documentaire ?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dsi-senat.github.io/dsi-senat/posts/gitlab/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-07-15T18:39:00+02:00" />
+<meta property="article:modified_time" content="2021-09-01T16:39:00+02:00" />
+
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Utiliser Gitlab, le couteau suisse de l&#39;ingénieur Sénat"/>
+<meta name="twitter:description" content="L&rsquo;organisation des développements s&rsquo;appuie sur l&rsquo;outil GitLab.
+Comment est utilisé GitLab par l&rsquo;équipe documentaire ?"/>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+<link rel="stylesheet" href="https://dsi-senat.github.io/dsi-senat/css/icomoon.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/overlayscrollbars@1.13.1/css/OverlayScrollbars.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css">
+<link rel="stylesheet" href="https://dsi-senat.github.io/dsi-senat/css/site.css" />
+
+<style>
+  .ui.header a:not(.item, .ui.button):hover {
+    text-decoration: underline;
+  }
+
+  
+  a:not(.item, .ui.button) {
+    color: seagreen !important;
+  }
+  
+
+  
+  .inverted a:not(.item, .ui.button) {
+     color: darkseagreen !important;
+  }
+  
+
+  
+  body.default {
+    
+    background-color: #fff;
+    
+
+    
+    background-image: url(/dsi-senat/dsi/background.jpg);
+    
+  }
+  
+
+  
+</style>
+
+
+    
+
+
+
+
+
+
+
+    
+    <link rel="stylesheet" href="https://dsi-senat.github.io/dsi-senat/css/custom.css" />
+    
+  </head>
+
+  <body class="default">
+    
+<nav class="ui secondary menu dream-menu dream-nav">
+
+  <a class="item dream-flip-toggle" title="Retourne ça !">
+    <i class="large link bullseye icon"></i>
+  </a>
+  <a class="item" href="https://dsi-senat.github.io/dsi-senat/" title="Accueil">
+    <i class="large link home icon"></i>
+  </a>
+  
+  
+  <a class="item" title="Search" onclick="toggleSearch(event)">
+    <i class="large link search icon"></i>
+  </a>
+  
+</nav>
+
+    <div class="flip-container">
+      <div class="flipper">
+        <section class="front">
+          <div class="dream-max-width">
+            
+<div class="ui relaxed centered grid dream-grid dream-grid-single">
+  
+  
+  
+  
+
+  
+  <aside class="sixteen wide mobile sixteen wide tablet three wide computer column dream-single-aside">
+    
+    <div class="ui segment toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#perspectives">Perspectives</a></li>
+  </ul>
+</nav>
+    </div>
+    
+
+    
+  </aside>
+  
+  <div class="sixteen wide mobile sixteen wide tablet ten wide computer column markdown-body dream-single" id="dream-save-post-as-img">
+    <section class="ui top attached segment">
+      <header>
+        <h1 class="ui large header">Utiliser Gitlab, le couteau suisse de l&#39;ingénieur Sénat<span class="sub header">
+            <span class="left">
+              @
+              
+                
+                  LC
+                
+              
+
+              | 
+                  <span data-format="luxon">2021-07-15T18:39:00&#43;02:00</span>
+                
+
+              | 4 minutes de lecture
+
+              
+              | Mise à jour le
+                
+                  <span data-format="luxon">2021-09-01T16:39:00&#43;02:00</span>
+                
+              
+            </span>
+
+            
+            <span class="dream-share">
+  <a href="#" class="save-as-image" title="Enregistrer sous forme d&#39;image" onclick="savePostAsImg()">
+    <i class="save icon"></i>
+  </a>
+  <a href="https://twitter.com/intent/tweet?text=Utiliser%20Gitlab%2c%20le%20couteau%20suisse%20de%20l%27ing%c3%a9nieur%20S%c3%a9nat&url=https%3a%2f%2fdsi-senat.github.io%2fdsi-senat%2fposts%2fgitlab%2f" title="Twitter">
+    <i class="twitter icon"></i>
+  </a>
+  <a href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fdsi-senat.github.io%2fdsi-senat%2fposts%2fgitlab%2f" title="Facebook">
+    <i class="facebook icon"></i>
+  </a>
+</span>
+
+            
+          </span>
+        </h1>
+      </header>
+
+      <article class="main">
+        
+        <img class="cover" src="https://dsi-senat.github.io/dsi-senat/img/Gitlab-14.3.0-pre-issue-tracker-08-25-21.png" />
+        
+
+        <p>L&rsquo;organisation des développements s&rsquo;appuie sur l&rsquo;outil GitLab.</p>
+<p>Comment est utilisé GitLab par l&rsquo;équipe documentaire ?</p>
+<p>Tout d&rsquo;abord, notre instance GitLab a vocation à devenir l&rsquo;unique serveur Git centralisé pour l&rsquo;ensemble de nos
+développements. Les groupes permettent de refléter l&rsquo;organisation interne de l&rsquo;équipe en équipes et en projets
+et les développeurs conservent une visibilité importante sur l&rsquo;ensemble des projets pour faciliter la collaboration.</p>
+<p>Ensuite, nous voyons GitLab avant tout comme une plateforme de communication autour du code ; chaque objet dans
+GitLab (ticket, demande de fusion, page wiki…) est une occasion de discussion entre développeurs et chacune de ces
+conversations est enregistrée et devient de la documentation du projet. GitLab permet de soutenir chaque phase de
+développement :</p>
+<ol>
+<li>Les tickets sont le support de la fonctionnalité à développer. On y discute beaucoup cas d&rsquo;utilisation, exemples ou
+cas aux limites, problématiques d&rsquo;ergonomie, propositions de design et peu de problématiques techniques qui n&rsquo;en
+seront que les conséquences (voir les demandes de fusion plus bas). Dans un objectif permanent de maximiser la valeur
+livrée à nos utilisateurs, les tickets purement techniques doivent être limités au maximum ; les évolutions
+techniques seront plutôt portées par des tickets fonctionnels qui nécessitent ces évolutions.</li>
+<li>Les jalons (<span lang="en"><em>milestones</em></span>) servent à documenter chaque itération. La description peut
+présenter les objectifs de l&rsquo;itération, mais aussi documenter ce qui a été fait pour préparer la réunion avec les
+utilisateurs. Le point d&rsquo;entrée principal pour les utilisateurs est le tableau Kanban
+(<span lang="en"><em>board</em></span>) du jalon en cours, avec des colonnes <em>À faire</em>, <em>À définir</em>, <em>En cours</em>, <em>À valider</em>
+et <em>Terminé</em>. Pour chaque gros projet en cours de développement, ce tableau est aussi le support de la
+réunion quotidienne de l&rsquo;équipe.</li>
+<li>Les demandes de fusion (<span lang="en"><em>merge requests</em></span>) sont le support des revues de code. On y discute
+choix d&rsquo;implémentation, architecture logicielle, problématiques techniques. Les possibilités offertes par Gitlab
+pour exprimer les contraintes (ne pas fusionner cette requête avant que tel ticket soit fermé,…) et les enchaînements
+(fusionner cette requête entraîne la fermeture de tel ticket…) sont utilisées.</li>
+<li>La plateforme d&rsquo;intégration continue compile le code à chaque fois qu&rsquo;il est poussé sur un dépôt, lance et vérifie
+<a href="https://dsi-senat.github.io/dsi-senat/posts/tdd/">les tests automatisés</a>, confronte le code avec la plateforme qualité <a href="https://sonarqube.org">sonarqube</a>. En cas de besoin, le
+développeur responsable est contacté automatiquement par mail ou via notre
+<a href="https://rocket.chat/">rocket.chat</a>
+interne.</li>
+</ol>
+<p>GitLab est très flexible et permet à chaque équipe d&rsquo;adapter le mode de travail à sa taille et à la complexité ou à la
+criticité du projet.</p>
+<h2 id="perspectives">Perspectives</h2>
+<p>Notre instance GitLab est mise à jour dès que les nouvelles versions sortent et nous évaluons donc régulièrement les
+nouveautés pour faire bouger nos pratiques. C&rsquo;est ainsi que nous testons en ce moment l&rsquo;utilité des itérations ou des
+publications (<span lang="en"><em>releases</em></span>).</p>
+<p>Une fonctionnalité disponible depuis longtemps, coûteuse à implémenter, mais qui nous semble intéressante est la mise à
+disposition à la volée d&rsquo;environnement de test par branches. Depuis notre migration sur des
+<a href="https://dsi-senat.github.io/dsi-senat/posts/docker/">clusters Kubernetes</a>, c&rsquo;est une fonctionnalité qui semble désormais envisageable et que nous testerons.
+De là, on pourra peut-être envisager des livraisons en continu (au moins sur les environnemnts de qualification).</p>
+<p>La documentation d&rsquo;une <abbr title="Direction des Systèmes d'Information">DSI</abbr> va plus loin que la simple
+documentation du code des applications. Par souci de cohérence, les pages wiki des projets applicatifs sont donc
+conservées sur <a href="../wikitn/">notre wiki interne</a> ce qui limite les synergies avec le reste de GitLab. À l&rsquo;avenir on
+pourra étudier l&rsquo;utilité de migrer toute la documentation sur GitLab ou peut-être une articulation entre certaines pages
+sur WikITN et certaines pages sur le GitLab.</p>
+<p>Enfin, notre instance GitLab est pour l&rsquo;instant limitée aux développeurs, principalement pour des raisons de coût de
+licence mais aussi d&rsquo;IHM trop orientée vers les informaticiens. Avec les efforts pour
+<a href="https://dsi-senat.github.io/dsi-senat/posts/coproduction/">embarquer de plus en plus les utilisateurs dans la construction</a> de nos applications, ce modèle
+atteint ses limites : sur certains projets, nous avons parfois une liste de tickets maintenue par les utilisateurs
+sous Excel en parallèle de la liste sous GitLab. Nous étudions diverses pistes pour rationaliser ce fonctionnement,
+comme l&rsquo;utilisation du <a href="https://docs.gitlab.com/ee/user/project/service_desk.html"><span lang="en"><em>Service Desk</em></span></a>.</p>
+<hr>
+<p>Illustration : <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> -
+İsmail Arılık - &ldquo;Own work&rdquo; -
+<a href="wikipedia">Wikipedia</a></p>
+      </article>
+    </section>
+
+    
+
+    
+
+    
+  </div>
+</div>
+
+
+            <footer class="ui basic center aligned segment" style="background-color: transparent;">
+              
+              <p>© 2021 Travailler au pôle documentaire de la DSI du Sénat - Que fait un ingénieur-développeur chez nous ?</p>
+              
+
+              <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/g1eny0ung/hugo-theme-dream" target="_blank">Dream</a>.</p>
+
+              
+            </footer>
+          </div>
+        </section>
+        <section class="back">
+          <div class="dream-max-width">
+            <header class="ui basic very padded segment dream-header">
+  
+  <div class="ui small circular image">
+    <img src="https://dsi-senat.github.io/dsi-senat/dsi/dsi-docu.jpg" alt="avatar" />
+  </div>
+  
+
+  <div class="content">
+    <h1 class="ui medium header">DSI-docu<span class="sub header">Travailler au pôle documentaire de la DSI du Sénat - Que fait un ingénieur-développeur chez nous ?</span>
+    </h1>
+
+    <article class="ui horizontal list">
+      
+      <a class="item" href="https://dsi-senat.github.io/dsi-senat/posts">
+        <i class="archive icon" title="Archives"></i>
+      </a>
+      
+      <a class="item" href="https://dsi-senat.github.io/dsi-senat/categories">
+        <i class="th list icon" title="Toutes les catégories"></i>
+      </a>
+      <a class="item" href="https://dsi-senat.github.io/dsi-senat/tags">
+        <i class="tags icon" title="Tous les étiquettes"></i>
+      </a>
+    </article>
+
+    
+    
+    
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+
+    
+
+    
+    
+    
+          <div class="dream-tags">
+          
+          
+          
+            <a class="ui label" href="https://dsi-senat.github.io/dsi-senat/tags/application/" title="Application">
+              Application
+            </a>
+          
+          
+          
+            <a class="ui label" href="https://dsi-senat.github.io/dsi-senat/tags/institution/" title="institution">
+              institution
+            </a>
+          
+          
+          
+            <a class="ui label" href="https://dsi-senat.github.io/dsi-senat/tags/m%C3%A9thode/" title="méthode">
+              méthode
+            </a>
+          
+          
+          
+            <a class="ui label" href="https://dsi-senat.github.io/dsi-senat/tags/organigramme/" title="organigramme">
+              organigramme
+            </a>
+          
+          
+          
+            <a class="ui label" href="https://dsi-senat.github.io/dsi-senat/tags/prix/" title="prix">
+              prix
+            </a>
+          
+          
+          
+            <a class="ui label" href="https://dsi-senat.github.io/dsi-senat/tags/si/" title="SI">
+              SI
+            </a>
+          
+          
+          
+            <a class="ui label" href="https://dsi-senat.github.io/dsi-senat/tags/structure/" title="Structure">
+              Structure
+            </a>
+          
+          </div>
+    
+
+    
+  </div>
+</header>
+
+
+<div class="ui relaxed grid dream-grid dream-back">
+  
+  
+  
+  <div class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
+    <article class="ui segment markdown-body">
+      <div class="ui medium header">DSI-docu</div>
+      <p>Ce site est réalisé par l&rsquo;équipe documentaire de la DSI du Sénat. Il présente l&rsquo;activité d&rsquo;un ingénieur-développeur en
+son sein à travers la description des méthodes de travail et de quelques projets emblématiques sur lesquels il pourra
+travailler.</p>
+<p>Pout tout renseignement, vous pouvez écrire à <a href="mailto:s.dubourg@senat.fr">s.dubourg@senat.fr</a></p>
+
+    </article>
+  </div>
+  
+  <div class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
+    <article class="ui segment markdown-body">
+      <div class="ui medium header">Credits</div>
+      <p>Merci aux personnes dont les contributions nous ont été utiles pour la réalisation ce ce site.</p>
+<ul>
+<li>L'<a href="https://dsi-senat.github.io/dsi-senat/dsi/background.jpg">image de fond</a> est (c) Sénat.</li>
+<li>Le modèle de page, <a href="https://github.com/g1eny0ung/hugo-theme-dream">dream</a>,
+a été réalisé par <a href="https://g1eny0ung.site/">杨钺</a>, merci à lui pour sa
+réactivité.</li>
+<li>Le générateur de pages statiques est <a href="https://gohugo.io/">Hugo</a>, logiciel
+libre.</li>
+<li>L&rsquo;hébergeur est <a href="https://github.com/">Github</a>.</li>
+</ul>
+    </article>
+  </div>
+  
+
+  <div class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
+    <article class="ui segment">
+      <div class="ui medium header">Liens sociaux</div>
+      <nav class="ui secondary menu dream-menu dream-socials">
+  
+  <a class="item" href="https://dsi-senat.github.io/dsi-senat/index.xml">
+    <i class="large rss square icon" title="RSS"></i>
+  </a>
+  
+
+  
+  <a class="item" href="mailto:sebastien@dubourg.name">
+    <i class="large mail icon" title="Email"></i>
+  </a>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <a class="item" href="https://github.com/dsi-senat" target="_blank">
+    <i class="large github icon" title="GitHub"></i>
+  </a>
+  
+
+  
+
+  
+
+  
+</nav>
+
+    </article>
+  </div>
+
+  <div class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
+    
+    <article class="ui segment">
+      Le contenu de ce site ne peut être ré-utilisé qu'après autorisation. Merci d'écrire à s.dubourg@senat.fr si besoin.
+    </article>
+    
+  </div>
+
+  
+</div>
+
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+
+    
+    <div class="ui segment" id="dream-search">
+  <div class="ui search">
+    <div class="ui transparent input">
+      <input class="prompt" type="text" placeholder="Search" />
+    </div>
+    <div class="results"></div>
+  </div>
+</div>
+<script>
+  $(document).ready(function () {
+    $.getJSON('https:\/\/dsi-senat.github.io\/dsi-senat\//index.json', function (data) {
+      $('.ui.search').search({
+        source: data,
+        searchFields: ['title'],
+        showNoResults: false,
+      })
+    })
+  })
+</script>
+<script src="https://dsi-senat.github.io/dsi-senat/js/search.js"></script>
+
+    
+
+    
+
+    <script>
+  window.background = "#fff"
+  window.defaultDark =  null 
+  window.backgroundDark =  null 
+  window.backgroundImageDark =  null 
+  window.darkNav =  null 
+  window.maxTags =  null 
+  window.hasTwitterEmbed =  null 
+  window.fixedNav =  null 
+
+  if (window.hasTwitterEmbed) {
+    
+    window.twttr = (function (d, s, id) {
+      var js,
+        fjs = d.getElementsByTagName(s)[0],
+        t = window.twttr || {}
+      if (d.getElementById(id)) return t
+      js = d.createElement(s)
+      js.id = id
+      js.src = 'https://platform.twitter.com/widgets.js'
+      fjs.parentNode.insertBefore(js, fjs)
+
+      t._e = []
+      t.ready = function (f) {
+        t._e.push(f)
+      }
+
+      return t
+    })(document, 'script', 'twitter-wjs')
+  }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/overlayscrollbars@1.13.1/js/jquery.overlayScrollbars.min.js"></script>
+<script src="https://dsi-senat.github.io/dsi-senat/js/header.js"></script>
+<script src="https://dsi-senat.github.io/dsi-senat/js/main.js"></script>
+<script src="https://dsi-senat.github.io/dsi-senat/js/theme.js"></script>
+
+    
+
+
+<script src="https://cdn.jsdelivr.net/npm/luxon@1.26.0"></script>
+
+<script>
+  format()
+
+  function format() {
+    $('span[data-format="luxon"]').each(function () {
+      var date = $(this).text()
+
+      $(this).text(luxon.DateTime.fromISO(date, { locale: "fr" }).toFormat("yyyy-MM-dd"))
+    })
+  }
+</script>
+
+
+
+<script src="https://dsi-senat.github.io/dsi-senat/js/scrollToTop.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.1"></script>
+<script src="https://dsi-senat.github.io/dsi-senat/js/post.js" defer></script>
+
+
+    
+
+    
+  </body>
+</html>

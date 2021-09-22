@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Travailler au pôle documentaire de la DSI du Sénat - Que fait un ingénieur-développeur chez nous ?</title>
+    <link>https://dsi-senat.github.io/dsi-senat/categories/</link>
+    <description>Recent content in Categories on Travailler au pôle documentaire de la DSI du Sénat - Que fait un ingénieur-développeur chez nous ?</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    <copyright>Le contenu de ce site ne peut être ré-utilisé qu&#39;après autorisation. Merci d&#39;écrire à s.dubourg@senat.fr si besoin.</copyright>
+    <lastBuildDate>Wed, 01 Sep 2021 16:39:00 +0200</lastBuildDate><atom:link href="https://dsi-senat.github.io/dsi-senat/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Organisation</title>
+      <link>https://dsi-senat.github.io/dsi-senat/categories/organisation/</link>
+      <pubDate>Wed, 01 Sep 2021 16:39:00 +0200</pubDate>
+      
+      <guid>https://dsi-senat.github.io/dsi-senat/categories/organisation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>outil</title>
+      <link>https://dsi-senat.github.io/dsi-senat/categories/outil/</link>
+      <pubDate>Wed, 01 Sep 2021 16:39:00 +0200</pubDate>
+      
+      <guid>https://dsi-senat.github.io/dsi-senat/categories/outil/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>application</title>
+      <link>https://dsi-senat.github.io/dsi-senat/categories/application/</link>
+      <pubDate>Wed, 01 Sep 2021 16:29:00 +0200</pubDate>
+      
+      <guid>https://dsi-senat.github.io/dsi-senat/categories/application/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>actualite</title>
+      <link>https://dsi-senat.github.io/dsi-senat/categories/actualite/</link>
+      <pubDate>Sat, 15 May 2021 20:25:00 +0200</pubDate>
+      
+      <guid>https://dsi-senat.github.io/dsi-senat/categories/actualite/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

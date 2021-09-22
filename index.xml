@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Travailler au pôle documentaire de la DSI du Sénat - Que fait un ingénieur-développeur chez nous ?</title>
+    <link>https://dsi-senat.github.io/dsi-senat/</link>
+    <description>Recent content on Travailler au pôle documentaire de la DSI du Sénat - Que fait un ingénieur-développeur chez nous ?</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    <copyright>Le contenu de ce site ne peut être ré-utilisé qu&#39;après autorisation. Merci d&#39;écrire à s.dubourg@senat.fr si besoin.</copyright>
+    <lastBuildDate>Wed, 01 Sep 2021 16:39:00 +0200</lastBuildDate><atom:link href="https://dsi-senat.github.io/dsi-senat/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Travailler pour le Sénat</title>
+      <link>https://dsi-senat.github.io/dsi-senat/posts/senat/</link>
+      <pubDate>Tue, 08 Jun 2021 17:24:06 +0200</pubDate>
+      
+      <guid>https://dsi-senat.github.io/dsi-senat/posts/senat/</guid>
+      <description>&lt;p&gt;Le Sénat constitue avec l&amp;rsquo;Assemblée Nationale le parlement français. Qu&amp;rsquo;est-ce
+que cela signifie ?&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Être ingénieur au sein de la DSI</title>
+      <link>https://dsi-senat.github.io/dsi-senat/posts/dsi/</link>
+      <pubDate>Wed, 09 Jun 2021 17:24:06 +0200</pubDate>
+      
+      <guid>https://dsi-senat.github.io/dsi-senat/posts/dsi/</guid>
+      <description>&lt;p&gt;La DSI du Sénat compte aujourd&amp;rsquo;hui plus de cinquante personnes, majoritairement
+des ingénieurs informatiques. Ell est organisée principalement autour de deux
+divisions :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;la division des applications informatiques;&lt;/li&gt;
+&lt;li&gt;la division des équipements, de l&amp;rsquo;administration et de la sécurité des systèmes d&amp;rsquo;information.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Quelles sont les équipes et quels sont leurs rôles  ?&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Faire vivre le système d&#39;information</title>
+      <link>https://dsi-senat.github.io/dsi-senat/posts/si/</link>
+      <pubDate>Wed, 09 Jun 2021 17:24:06 +0200</pubDate>
+      
+      <guid>https://dsi-senat.github.io/dsi-senat/posts/si/</guid>
+      <description>&lt;p&gt;L&amp;rsquo;équipe documentaire a notamment pour mission de définir et
+de faire vivre sur le long terme le système d&amp;rsquo;information, qui permet au Sénat
+d&amp;rsquo;accomplir ses missions institutionnelles et de remplir son obligation de
+publicité vis à vis des citoyens.&lt;/p&gt;
+&lt;p&gt;Comment se traduit concrètement cette nécessité de suivi sur la durée ?&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Coproduire avec les utilisateurs</title>
+      <link>https://dsi-senat.github.io/dsi-senat/posts/coproduction/</link>
+      <pubDate>Fri, 09 Jul 2021 18:14:06 +0200</pubDate>
+      
+      <guid>https://dsi-senat.github.io/dsi-senat/posts/coproduction/</guid>
+      <description>&lt;p&gt;Nos applications sont conçues et développées en
+coproduction avec nos utilisateurs. Pour le pôle documentaire, il s&amp;rsquo;agit
+principalement des directions des missions institutionnelles et de la direction
+de la communication.&lt;/p&gt;
+&lt;p&gt;Comment est organisée cette collaboration ?&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Développer autour des formats structurés</title>
+      <link>https://dsi-senat.github.io/dsi-senat/posts/structure/</link>
+      <pubDate>Wed, 09 Jun 2021 17:24:06 +0200</pubDate>
+      
+      <guid>https://dsi-senat.github.io/dsi-senat/posts/structure/</guid>
+      <description>&lt;p&gt;Les ingénieurs du pôle documentaire utilisent le plus possible des formats
+de données structurés de préférence aux formats bureautiques.&lt;/p&gt;
+&lt;p&gt;Quelle est la raison de cette stratégie et quelles en sont les illustrations ?&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Mettre en œuvre le Test driven Development</title>
+      <link>https://dsi-senat.github.io/dsi-senat/posts/tdd/</link>
+      <pubDate>Thu, 15 Jul 2021 18:39:00 +0200</pubDate>
+      
+      <guid>https://dsi-senat.github.io/dsi-senat/posts/tdd/</guid>
+      <description>&lt;p&gt;Pour ses développements, l&amp;rsquo;équipe documentaire s&amp;rsquo;efforce de mettre en place une
+méthode de tests systématiques.&lt;/p&gt;
+&lt;p&gt;Pourquoi cela ? Et comment procédons-nous ?&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Utiliser Gitlab, le couteau suisse de l&#39;ingénieur Sénat</title>
+      <link>https://dsi-senat.github.io/dsi-senat/posts/gitlab/</link>
+      <pubDate>Thu, 15 Jul 2021 18:39:00 +0200</pubDate>
+      
+      <guid>https://dsi-senat.github.io/dsi-senat/posts/gitlab/</guid>
+      <description>&lt;p&gt;L&amp;rsquo;organisation des développements s&amp;rsquo;appuie sur l&amp;rsquo;outil GitLab.&lt;/p&gt;
+&lt;p&gt;Comment est utilisé GitLab par l&amp;rsquo;équipe documentaire ?&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Prix CNEN / Lexis Nexis 2020 attribué au Sénat</title>
+      <link>https://dsi-senat.github.io/dsi-senat/posts/prix2020/</link>
+      <pubDate>Sat, 15 May 2021 20:25:00 +0200</pubDate>
+      
+      <guid>https://dsi-senat.github.io/dsi-senat/posts/prix2020/</guid>
+      <description>&lt;p&gt;Jeudi 26 novembre 2020, le Conseil national d’évaluation des normes et la revue
+juridique LexisNexis ont remis au Sénat le prix 2020 de la contribution à la
+qualité du droit dans la catégorie &amp;ldquo;Élaborer et appliquer&amp;rdquo; pour l’application
+&lt;a href=&#34;https://dsi-senat.github.io/dsi-senat/posts/monalisa&#34;&gt;&amp;ldquo;Monalisa&amp;rdquo;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Qu&amp;rsquo;est-ce qui a plu au jury ?&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Déployer sur Docker / Kubernetes</title>
+      <link>https://dsi-senat.github.io/dsi-senat/posts/docker/</link>
+      <pubDate>Fri, 07 May 2021 18:30:04 +0200</pubDate>
+      
+      <guid>https://dsi-senat.github.io/dsi-senat/posts/docker/</guid>
+      <description>&lt;p&gt;Docker / Kubernetes, mise en place récemment, est la plateforme cible de nos
+applications. Cette plateforme est sous la responsabilité d&amp;rsquo;une équipe devops
+constituée par des ingénieurs des équipes de développement et de l&amp;rsquo;équipe
+système.&lt;/p&gt;
+&lt;p&gt;Comment est-elle organisée ?&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Moderniser l&#39;application Ameli</title>
+      <link>https://dsi-senat.github.io/dsi-senat/posts/ameli/</link>
+      <pubDate>Fri, 16 Jul 2021 10:22:00 +0200</pubDate>
+      
+      <guid>https://dsi-senat.github.io/dsi-senat/posts/ameli/</guid>
+      <description>&lt;p&gt;Ameli est une application essentielle au travail du parlement : c&amp;rsquo;est elle qui
+permet la gestion des amendements, propositions faites par les sénateurs ou le
+gouvernement de modifications des textes de loi soumis au parlement.
+L&amp;rsquo;application développée il y a 20 ans est en cours de modernisation.&lt;/p&gt;
+&lt;p&gt;Comment effectuer cette modernisation sans perturber l&amp;rsquo;utilisation quotidienne
+de cette application ?&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Mettre l&#39;IA au service de la fabrication de la loi</title>
+      <link>https://dsi-senat.github.io/dsi-senat/posts/monalisa/</link>
+      <pubDate>Thu, 15 Jul 2021 20:44:04 +0200</pubDate>
+      
+      <guid>https://dsi-senat.github.io/dsi-senat/posts/monalisa/</guid>
+      <description>&lt;p&gt;(illustration : Le tableau de la loi en construction qui permet de suivre
+précisément l&amp;rsquo;apport du Parlement sur les textes de loi est une des nombreuses
+applications de Monalisa)&lt;/p&gt;
+&lt;p&gt;Monalisa est l&amp;rsquo;application de référence pour tout ce qui concerne l&amp;rsquo;élaboration
+des textes de loi par le Parlement et plus particulièrement par le Sénat.&lt;/p&gt;
+&lt;p&gt;Quelles sont ses caractéristiques techniques et fonctionnelles importantes ?&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Refondre la base des sénateurs</title>
+      <link>https://dsi-senat.github.io/dsi-senat/posts/refonte-arsen/</link>
+      <pubDate>Thu, 15 Jul 2021 21:08:04 +0200</pubDate>
+      
+      <guid>https://dsi-senat.github.io/dsi-senat/posts/refonte-arsen/</guid>
+      <description>&lt;p&gt;(illustration : Le schema de principe de la refonte)&lt;/p&gt;
+&lt;p&gt;L&amp;rsquo;application/base de données Arsen qui contient toutes les données biographiques
+des sénateurs est au cœur du système d&amp;rsquo;information du Sénat. Elle alimente
+plusieurs dizaines d&amp;rsquo;application. Comment la moderniser sans provoquer
+un big bang ?&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Transformer les outils de comptes rendus</title>
+      <link>https://dsi-senat.github.io/dsi-senat/posts/scribe/</link>
+      <pubDate>Fri, 16 Jul 2021 11:03:00 +0200</pubDate>
+      
+      <guid>https://dsi-senat.github.io/dsi-senat/posts/scribe/</guid>
+      <description>&lt;p&gt;SCRIBE est la nouvelle application unifiant tous les outils de compte rendu du
+Sénat. Déjà en production pour les comptes rendus de commission, elle intégrera
+les comptes rendus de séance publique prochainement. Elle permet,
+avec l&amp;rsquo;abandon de Word, d&amp;rsquo;avoir
+&lt;a href=&#34;https://dsi-senat.github.io/dsi-senat/posts/structure&#34;&gt;une approche beaucoup plus structurée&lt;/a&gt; et donc plus fiable
+pour mettre en valeur le travail des sénateurs sur le site du Sénat et dans le
+&lt;em&gt;Journal Officiel&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Quels outils ont-ils été utilisés pour sa réalisation ?&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Moderniser www.senat.fr</title>
+      <link>https://dsi-senat.github.io/dsi-senat/posts/www.senat/</link>
+      <pubDate>Wed, 01 Sep 2021 16:29:00 +0200</pubDate>
+      
+      <guid>https://dsi-senat.github.io/dsi-senat/posts/www.senat/</guid>
+      <description>&lt;p&gt;Le Sénat a été une des premières institutions publiques françaises à ouvrir
+son site
+web en 1995. La dernière refonte date de 2010 et le site a besoin d&amp;rsquo;un sérieux
+rajeunissement.&lt;/p&gt;
+&lt;p&gt;À quoi consiste ce projet de migration d&amp;rsquo;un site comportant 2 millions de
+pages ?&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Imaginer les outils de dématérialisation du travail parlementaire</title>
+      <link>https://dsi-senat.github.io/dsi-senat/posts/demeter/</link>
+      <pubDate>Thu, 29 Jul 2021 11:29:00 +0200</pubDate>
+      
+      <guid>https://dsi-senat.github.io/dsi-senat/posts/demeter/</guid>
+      <description>&lt;p&gt;Demeter est l&amp;rsquo;application de dématérialisation des travaux des commissions et
+délégations du Sénat. Elle permet aux utilisateurs de suivre tous les types de
+réunion : examen de texte, audition, présentation de rapport&amp;hellip;&lt;/p&gt;
+&lt;p&gt;Pourquoi et comment cette application a-t-elle été développée ?&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Collaborer à la documentation</title>
+      <link>https://dsi-senat.github.io/dsi-senat/posts/wikitn/</link>
+      <pubDate>Wed, 01 Sep 2021 16:39:00 +0200</pubDate>
+      
+      <guid>https://dsi-senat.github.io/dsi-senat/posts/wikitn/</guid>
+      <description>&lt;p&gt;Pour sa documentation, la DSI a mis en place un wiki utilisant le même moteur que
+Wikipedia.&lt;/p&gt;
+&lt;p&gt;Qu’y trouve-t-on?&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Garder ses compétences à jour</title>
+      <link>https://dsi-senat.github.io/dsi-senat/posts/veille/</link>
+      <pubDate>Thu, 15 Jul 2021 18:39:00 +0200</pubDate>
+      
+      <guid>https://dsi-senat.github.io/dsi-senat/posts/veille/</guid>
+      <description>&lt;p&gt;La veille technologique est une activité indispensable pour un
+ingénieur-informaticien.&lt;/p&gt;
+&lt;p&gt;Comment est-elle organisée dans l&amp;rsquo;équipe documentaire ?&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

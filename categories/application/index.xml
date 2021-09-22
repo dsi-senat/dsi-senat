@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>application on Travailler au pôle documentaire de la DSI du Sénat - Que fait un ingénieur-développeur chez nous ?</title>
+    <link>https://dsi-senat.github.io/dsi-senat/categories/application/</link>
+    <description>Recent content in application on Travailler au pôle documentaire de la DSI du Sénat - Que fait un ingénieur-développeur chez nous ?</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    <copyright>Le contenu de ce site ne peut être ré-utilisé qu&#39;après autorisation. Merci d&#39;écrire à s.dubourg@senat.fr si besoin.</copyright>
+    <lastBuildDate>Wed, 01 Sep 2021 16:29:00 +0200</lastBuildDate><atom:link href="https://dsi-senat.github.io/dsi-senat/categories/application/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Moderniser l&#39;application Ameli</title>
+      <link>https://dsi-senat.github.io/dsi-senat/posts/ameli/</link>
+      <pubDate>Fri, 16 Jul 2021 10:22:00 +0200</pubDate>
+      
+      <guid>https://dsi-senat.github.io/dsi-senat/posts/ameli/</guid>
+      <description>&lt;p&gt;Ameli est une application essentielle au travail du parlement : c&amp;rsquo;est elle qui
+permet la gestion des amendements, propositions faites par les sénateurs ou le
+gouvernement de modifications des textes de loi soumis au parlement.
+L&amp;rsquo;application développée il y a 20 ans est en cours de modernisation.&lt;/p&gt;
+&lt;p&gt;Comment effectuer cette modernisation sans perturber l&amp;rsquo;utilisation quotidienne
+de cette application ?&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Mettre l&#39;IA au service de la fabrication de la loi</title>
+      <link>https://dsi-senat.github.io/dsi-senat/posts/monalisa/</link>
+      <pubDate>Thu, 15 Jul 2021 20:44:04 +0200</pubDate>
+      
+      <guid>https://dsi-senat.github.io/dsi-senat/posts/monalisa/</guid>
+      <description>&lt;p&gt;(illustration : Le tableau de la loi en construction qui permet de suivre
+précisément l&amp;rsquo;apport du Parlement sur les textes de loi est une des nombreuses
+applications de Monalisa)&lt;/p&gt;
+&lt;p&gt;Monalisa est l&amp;rsquo;application de référence pour tout ce qui concerne l&amp;rsquo;élaboration
+des textes de loi par le Parlement et plus particulièrement par le Sénat.&lt;/p&gt;
+&lt;p&gt;Quelles sont ses caractéristiques techniques et fonctionnelles importantes ?&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Refondre la base des sénateurs</title>
+      <link>https://dsi-senat.github.io/dsi-senat/posts/refonte-arsen/</link>
+      <pubDate>Thu, 15 Jul 2021 21:08:04 +0200</pubDate>
+      
+      <guid>https://dsi-senat.github.io/dsi-senat/posts/refonte-arsen/</guid>
+      <description>&lt;p&gt;(illustration : Le schema de principe de la refonte)&lt;/p&gt;
+&lt;p&gt;L&amp;rsquo;application/base de données Arsen qui contient toutes les données biographiques
+des sénateurs est au cœur du système d&amp;rsquo;information du Sénat. Elle alimente
+plusieurs dizaines d&amp;rsquo;application. Comment la moderniser sans provoquer
+un big bang ?&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Transformer les outils de comptes rendus</title>
+      <link>https://dsi-senat.github.io/dsi-senat/posts/scribe/</link>
+      <pubDate>Fri, 16 Jul 2021 11:03:00 +0200</pubDate>
+      
+      <guid>https://dsi-senat.github.io/dsi-senat/posts/scribe/</guid>
+      <description>&lt;p&gt;SCRIBE est la nouvelle application unifiant tous les outils de compte rendu du
+Sénat. Déjà en production pour les comptes rendus de commission, elle intégrera
+les comptes rendus de séance publique prochainement. Elle permet,
+avec l&amp;rsquo;abandon de Word, d&amp;rsquo;avoir
+&lt;a href=&#34;https://dsi-senat.github.io/dsi-senat/posts/structure&#34;&gt;une approche beaucoup plus structurée&lt;/a&gt; et donc plus fiable
+pour mettre en valeur le travail des sénateurs sur le site du Sénat et dans le
+&lt;em&gt;Journal Officiel&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Quels outils ont-ils été utilisés pour sa réalisation ?&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Moderniser www.senat.fr</title>
+      <link>https://dsi-senat.github.io/dsi-senat/posts/www.senat/</link>
+      <pubDate>Wed, 01 Sep 2021 16:29:00 +0200</pubDate>
+      
+      <guid>https://dsi-senat.github.io/dsi-senat/posts/www.senat/</guid>
+      <description>&lt;p&gt;Le Sénat a été une des premières institutions publiques françaises à ouvrir
+son site
+web en 1995. La dernière refonte date de 2010 et le site a besoin d&amp;rsquo;un sérieux
+rajeunissement.&lt;/p&gt;
+&lt;p&gt;À quoi consiste ce projet de migration d&amp;rsquo;un site comportant 2 millions de
+pages ?&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Imaginer les outils de dématérialisation du travail parlementaire</title>
+      <link>https://dsi-senat.github.io/dsi-senat/posts/demeter/</link>
+      <pubDate>Thu, 29 Jul 2021 11:29:00 +0200</pubDate>
+      
+      <guid>https://dsi-senat.github.io/dsi-senat/posts/demeter/</guid>
+      <description>&lt;p&gt;Demeter est l&amp;rsquo;application de dématérialisation des travaux des commissions et
+délégations du Sénat. Elle permet aux utilisateurs de suivre tous les types de
+réunion : examen de texte, audition, présentation de rapport&amp;hellip;&lt;/p&gt;
+&lt;p&gt;Pourquoi et comment cette application a-t-elle été développée ?&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

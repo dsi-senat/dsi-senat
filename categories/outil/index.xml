@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>outil on Travailler au pôle documentaire de la DSI du Sénat - Que fait un ingénieur-développeur chez nous ?</title>
+    <link>https://dsi-senat.github.io/dsi-senat/categories/outil/</link>
+    <description>Recent content in outil on Travailler au pôle documentaire de la DSI du Sénat - Que fait un ingénieur-développeur chez nous ?</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    <copyright>Le contenu de ce site ne peut être ré-utilisé qu&#39;après autorisation. Merci d&#39;écrire à s.dubourg@senat.fr si besoin.</copyright>
+    <lastBuildDate>Wed, 01 Sep 2021 16:39:00 +0200</lastBuildDate><atom:link href="https://dsi-senat.github.io/dsi-senat/categories/outil/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Utiliser Gitlab, le couteau suisse de l&#39;ingénieur Sénat</title>
+      <link>https://dsi-senat.github.io/dsi-senat/posts/gitlab/</link>
+      <pubDate>Thu, 15 Jul 2021 18:39:00 +0200</pubDate>
+      
+      <guid>https://dsi-senat.github.io/dsi-senat/posts/gitlab/</guid>
+      <description>&lt;p&gt;L&amp;rsquo;organisation des développements s&amp;rsquo;appuie sur l&amp;rsquo;outil GitLab.&lt;/p&gt;
+&lt;p&gt;Comment est utilisé GitLab par l&amp;rsquo;équipe documentaire ?&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Déployer sur Docker / Kubernetes</title>
+      <link>https://dsi-senat.github.io/dsi-senat/posts/docker/</link>
+      <pubDate>Fri, 07 May 2021 18:30:04 +0200</pubDate>
+      
+      <guid>https://dsi-senat.github.io/dsi-senat/posts/docker/</guid>
+      <description>&lt;p&gt;Docker / Kubernetes, mise en place récemment, est la plateforme cible de nos
+applications. Cette plateforme est sous la responsabilité d&amp;rsquo;une équipe devops
+constituée par des ingénieurs des équipes de développement et de l&amp;rsquo;équipe
+système.&lt;/p&gt;
+&lt;p&gt;Comment est-elle organisée ?&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Collaborer à la documentation</title>
+      <link>https://dsi-senat.github.io/dsi-senat/posts/wikitn/</link>
+      <pubDate>Wed, 01 Sep 2021 16:39:00 +0200</pubDate>
+      
+      <guid>https://dsi-senat.github.io/dsi-senat/posts/wikitn/</guid>
+      <description>&lt;p&gt;Pour sa documentation, la DSI a mis en place un wiki utilisant le même moteur que
+Wikipedia.&lt;/p&gt;
+&lt;p&gt;Qu’y trouve-t-on?&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

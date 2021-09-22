@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="fr-fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Transformer les outils de comptes rendus | Travailler au pôle documentaire de la DSI du Sénat - Que fait un ingénieur-développeur chez nous ?</title>
+
+    
+<link href="https://dsi-senat.github.io/dsi-senat/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+
+
+
+<meta name="author" content="LC" />
+<meta name="description" content="SCRIBE est la nouvelle application unifiant tous les outils de compte rendu du Sénat. Déjà en production pour les comptes rendus de commission, elle intégrera les comptes rendus de séance publique prochainement. Elle permet, avec l&amp;rsquo;abandon de Word, d&amp;rsquo;avoir une approche beaucoup plus structurée et donc plus fiable pour mettre en valeur le travail des sénateurs sur le site du Sénat et dans le Journal Officiel.
+Quels outils ont-ils été utilisés pour sa réalisation ?
+" />
+
+
+
+<meta name="generator" content="Hugo 0.88.1" />
+
+<link rel="canonical" href="https://dsi-senat.github.io/dsi-senat/posts/scribe/" />
+
+
+<meta property="og:title" content="Transformer les outils de comptes rendus" />
+<meta property="og:description" content="SCRIBE est la nouvelle application unifiant tous les outils de compte rendu du
+Sénat. Déjà en production pour les comptes rendus de commission, elle intégrera
+les comptes rendus de séance publique prochainement. Elle permet,
+avec l&rsquo;abandon de Word, d&rsquo;avoir
+une approche beaucoup plus structurée et donc plus fiable
+pour mettre en valeur le travail des sénateurs sur le site du Sénat et dans le
+Journal Officiel.
+Quels outils ont-ils été utilisés pour sa réalisation ?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dsi-senat.github.io/dsi-senat/posts/scribe/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-07-16T11:03:00+02:00" />
+<meta property="article:modified_time" content="2021-09-01T16:03:00+02:00" />
+
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Transformer les outils de comptes rendus"/>
+<meta name="twitter:description" content="SCRIBE est la nouvelle application unifiant tous les outils de compte rendu du
+Sénat. Déjà en production pour les comptes rendus de commission, elle intégrera
+les comptes rendus de séance publique prochainement. Elle permet,
+avec l&rsquo;abandon de Word, d&rsquo;avoir
+une approche beaucoup plus structurée et donc plus fiable
+pour mettre en valeur le travail des sénateurs sur le site du Sénat et dans le
+Journal Officiel.
+Quels outils ont-ils été utilisés pour sa réalisation ?"/>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+<link rel="stylesheet" href="https://dsi-senat.github.io/dsi-senat/css/icomoon.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/overlayscrollbars@1.13.1/css/OverlayScrollbars.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css">
+<link rel="stylesheet" href="https://dsi-senat.github.io/dsi-senat/css/site.css" />
+
+<style>
+  .ui.header a:not(.item, .ui.button):hover {
+    text-decoration: underline;
+  }
+
+  
+  a:not(.item, .ui.button) {
+    color: seagreen !important;
+  }
+  
+
+  
+  .inverted a:not(.item, .ui.button) {
+     color: darkseagreen !important;
+  }
+  
+
+  
+  body.default {
+    
+    background-color: #fff;
+    
+
+    
+    background-image: url(/dsi-senat/dsi/background.jpg);
+    
+  }
+  
+
+  
+</style>
+
+
+    
+
+
+
+
+
+
+
+    
+    <link rel="stylesheet" href="https://dsi-senat.github.io/dsi-senat/css/custom.css" />
+    
+  </head>
+
+  <body class="default">
+    
+<nav class="ui secondary menu dream-menu dream-nav">
+
+  <a class="item dream-flip-toggle" title="Retourne ça !">
+    <i class="large link bullseye icon"></i>
+  </a>
+  <a class="item" href="https://dsi-senat.github.io/dsi-senat/" title="Accueil">
+    <i class="large link home icon"></i>
+  </a>
+  
+  
+  <a class="item" title="Search" onclick="toggleSearch(event)">
+    <i class="large link search icon"></i>
+  </a>
+  
+</nav>
+
+    <div class="flip-container">
+      <div class="flipper">
+        <section class="front">
+          <div class="dream-max-width">
+            
+<div class="ui relaxed centered grid dream-grid dream-grid-single">
+  
+  
+  
+  
+
+  
+  <aside class="sixteen wide mobile sixteen wide tablet three wide computer column dream-single-aside">
+    
+    <div class="ui segment toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#état-des-lieux">État des lieux</a></li>
+    <li><a href="#organisation-du-projet">Organisation du projet</a></li>
+    <li><a href="#un-peu-de-technique">Un peu de technique</a>
+      <ul>
+        <li><a href="#services-web">Services web</a></li>
+        <li><a href="#interface-utilisateur">Interface Utilisateur</a></li>
+        <li><a href="#hébergement">Hébergement</a></li>
+      </ul>
+    </li>
+    <li><a href="#feuille-de-route">Feuille de route</a></li>
+  </ul>
+</nav>
+    </div>
+    
+
+    
+  </aside>
+  
+  <div class="sixteen wide mobile sixteen wide tablet ten wide computer column markdown-body dream-single" id="dream-save-post-as-img">
+    <section class="ui top attached segment">
+      <header>
+        <h1 class="ui large header">Transformer les outils de comptes rendus<span class="sub header">
+            <span class="left">
+              @
+              
+                
+                  LC
+                
+              
+
+              | 
+                  <span data-format="luxon">2021-07-16T11:03:00&#43;02:00</span>
+                
+
+              | 6 minutes de lecture
+
+              
+              | Mise à jour le
+                
+                  <span data-format="luxon">2021-09-01T16:03:00&#43;02:00</span>
+                
+              
+            </span>
+
+            
+            <span class="dream-share">
+  <a href="#" class="save-as-image" title="Enregistrer sous forme d&#39;image" onclick="savePostAsImg()">
+    <i class="save icon"></i>
+  </a>
+  <a href="https://twitter.com/intent/tweet?text=Transformer%20les%20outils%20de%20comptes%20rendus&url=https%3a%2f%2fdsi-senat.github.io%2fdsi-senat%2fposts%2fscribe%2f" title="Twitter">
+    <i class="twitter icon"></i>
+  </a>
+  <a href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fdsi-senat.github.io%2fdsi-senat%2fposts%2fscribe%2f" title="Facebook">
+    <i class="facebook icon"></i>
+  </a>
+</span>
+
+            
+          </span>
+        </h1>
+      </header>
+
+      <article class="main">
+        
+        <img class="cover" src="https://dsi-senat.github.io/dsi-senat/img/scribe.png" />
+        
+
+        <p>SCRIBE est la nouvelle application unifiant tous les outils de compte rendu du
+Sénat. Déjà en production pour les comptes rendus de commission, elle intégrera
+les comptes rendus de séance publique prochainement. Elle permet,
+avec l&rsquo;abandon de Word, d&rsquo;avoir
+<a href="https://dsi-senat.github.io/dsi-senat/posts/structure">une approche beaucoup plus structurée</a> et donc plus fiable
+pour mettre en valeur le travail des sénateurs sur le site du Sénat et dans le
+<em>Journal Officiel</em>.</p>
+<p>Quels outils ont-ils été utilisés pour sa réalisation ?</p>
+<h2 id="état-des-lieux">État des lieux</h2>
+<p>Jusqu’à présent, chaque type de compte rendu (compte rendu de commission,
+compte rendu analytique de séance, compte rendu intégral de séance) était
+rédigé avec un modèle Word plus ou moins outillé et les pratiques divergeaient grandement entre les
+différentes catégories d&rsquo;utilisateurs. Par ailleurs, la technologie Visual Basic était un frein pour
+répondre à des demandes d&rsquo;automatisation et d&rsquo;homogénéisation grandissantes.</p>
+<p>Les objectifs du projet Scribe sont de :</p>
+<ul>
+<li>mettre en place un outil unique de compte rendu commun à l&rsquo;ensemble des
+comptes rendus tout en respectant les spécificités de chacun ;</li>
+<li>mieux intégrer  les comptes rendu dans le reste du
+<a href="https://dsi-senat.github.io/dsi-senat/posts/si/">SI</a> (les comptes rendus peuvent exploiter des informations déjà
+saisies ailleurs dans le SI et inversement) ;</li>
+<li>parvenir à une plus grande homogénéité entre les prises : les même cas de
+séance doivent avoir le même rendu final ;</li>
+<li>rendre les documents plus accessibles (par exemple en terme HTML) et ce
+faisant mieux mettre en valeur les comptes rendus et donc le travail du Sénat ;</li>
+<li>mettre en place une stack technique moderne et maintenable, plus centrée sur
+les compétences de la DSI.</li>
+</ul>
+<h2 id="organisation-du-projet">Organisation du projet</h2>
+<p>Le projet est développé en mode agile avec un comité utilisateurs qui rencontre l&rsquo;équipe projet toutes les
+3 à 4 semaines. Toutes les directions utilisatrices sont représentées, avec des référents désignés. Les mises
+à jour en production ont lieu au même rythme.</p>
+<p>L&rsquo;équipe projet constituée de quatre ingénieurs dont un seul est à plein temps
+sur le projet, utilise <a href="https://dsi-senat.github.io/dsi-senat/posts/gitlab/">GitLab</a> pour :</p>
+<ul>
+<li>le suivi de la réalisation ;</li>
+<li>les interactions (avec le <a href="https://rocket.chat/">Rocket.chat</a> du Sénat pour
+les discussions synchrones) ;</li>
+<li>la gestion du code (avec <a href="https://dsi-senat.github.io/dsi-senat/posts/wikitn/">le wiki de la DSI</a> pour la
+documentation du projet).</li>
+</ul>
+<p>Les utilisateurs pouvant être amenés à travailler à des horaires où le support de la DSI n&rsquo;est pas présent,
+avec des délais courts et une obligation de résultat (le compte rendu analytique de séance doit être publié
+dans la nuit, quel que soit l&rsquo;horaire de levée de séance), il a été décidé
+d&rsquo;investir particulièrement sur la
+qualité de cette application. Ainsi, il a par exemple été décidé que chaque ligne code poussée dans le dépôt
+doit avoir été revue par au moins un autre développeur de l&rsquo;équipe. Cette revue de code est réalisée à l&rsquo;aide
+des <em>demandes de fusion</em> (ou <em>merge requests</em>) de <a href="../gitlab/">GitLab</a>.</p>
+<p>Par ailleurs, dans une démarche qui devient généralisée sur les projets, <a href="https://dsi-senat.github.io/dsi-senat/posts/tdd/">les tests automatisés</a> sont
+devenus la norme.</p>
+<h2 id="un-peu-de-technique">Un peu de technique</h2>
+<p>SCRIBE est décomposée entre :</p>
+<ul>
+<li>une collection de services Web REST, codés en java et hébergés sur Tomcat. Ces services web font éventuellement
+appel à d&rsquo;autres composants de notre <a href="https://dsi-senat.github.io/dsi-senat/posts/si/">SI</a> (LDAP, bases de données,
+applications métier…), voire à des applications
+externes comme un correcteur orthographique et grammatical en SaaS ;</li>
+<li>une interface utilisateur en Javascript chargée dans le navigateur de
+l&rsquo;utilisateur.</li>
+</ul>
+<h3 id="services-web">Services web</h3>
+<p>La base technique est un <em>J2EE-light</em> avec CDI (<a href="http://weld.cdi-spec.org/">weld</a>), JPA
+(<a href="https://hibernate.org/">hibernate</a>), JAX-RS (<a href="https://resteasy.github.io/">resteasy</a>) et JAXB
+(<a href="https://github.com/FasterXML/jackson">jackson</a>). La programmation déclarative facilitée par les différentes
+annotations de J2EE est privilégiée pour la lisibilité qu&rsquo;elle apporte. Parmi toutes les bibliothèques utilisées sur
+cette application, on peut aussi distinguer <a href="https://deltaspike.apache.org/">deltaspike</a> pour les petits plus (en
+particulier <a href="https://deltaspike.apache.org/documentation/configuration.html">configuration</a>,
+<a href="https://deltaspike.apache.org/documentation/data.html">data</a> et
+<a href="https://deltaspike.apache.org/documentation/scheduler.html">scheduler</a>) très bien intégrés aux différents modules J2EE
+et <a href="https://projectlombok.org/">lombok</a> qui évite de diluer tout le code métier au milieu de plomberie sans valeur
+ajoutée.</p>
+<p>Pour faciliter la reproductibilité des tests et la capacité à travailler en mode déconnecté, un environnement complet
+bouchonnant l&rsquo;ensemble des systèmes externes a été mis en place : <a href="http://h2database.com/">base de données embarquée h2</a>,
+<a href="https://docs.ldap.com/ldap-sdk/docs/">annuaire embarqué unboundID</a>…</p>
+<p>L&rsquo;intégration continue exécute systématiquement notre jeu de tests unitaires et de tests d&rsquo;intégration (qui font office
+de tests fonctionnels dans le cadre de services web). Pour l&rsquo;écriture des tests automatisés, nous avons privilégié
+<a href="https://junit.org/junit4/">junit 4</a> qui a largement fait ses preuves avec
+<a href="https://joel-costigliola.github.io/assertj/">assertj</a> et <a href="https://site.mockito.org/">mockito</a> qui facilitent grandement
+l&rsquo;écriture et la lisibilité.</p>
+<h3 id="interface-utilisateur">Interface Utilisateur</h3>
+<p>Côté navigateur, c&rsquo;est le système <a href="https://vuejs.org/v2/guide/">vue.js</a> qui a été choisi (avec les classiques
+<a href="https://vuex.vuejs.org/guide/">vuex</a> et <a href="https://router.vuejs.org/guide/">router</a>) suite à diverses expérimentations en
+interne : sa courbe d&rsquo;apprentissage et son équilibre simplicité/puissance ont été appréciés. Au cœur d&rsquo;une application
+de rédaction de compte rendu, c&rsquo;est <a href="https://quilljs.com/">quill</a> a été retenu sur la recommandation d&rsquo;un prestataire
+pour l&rsquo;éditeur de texte : nous avons fait le pari de ne pas prendre la librairie la plus connue ou utilisée parce que
+Quilljs est simple, avec une API très puissante et venait avec un
+<a href="https://github.com/afry/quill-mention">système de commande intégré</a> très intéressant pour nos utilisateurs.</p>
+<p>Pour les composants graphiques, nous sommes très contents de <a href="https://bootstrap-vue.js.org/docs/">bootstrap-vue</a> et,
+en ce qui concerne les librairies complémentaires, nous apprécions
+<a href="https://github.com/axios/axios">axios</a> pour les requêtes vers nos
+services web ou encore <a href="https://date-fns.org/">date-fns</a>, très légère pour une gestion néanmoins très puissante des
+dates.</p>
+<p>La frontière est floue entre tests unitaires et tests d&rsquo;intégration avec
+<a href="https://vue-test-utils.vuejs.org/">vue-test-utils</a> mais ils sont, classiquement, codés et exécutés avec
+<a href="https://jestjs.io/docs/en/getting-started">jest</a>. Pour ce qui est des tests fonctionnels, les premières
+expérimentations ont été réalisées avec <a href="https://nightwatchjs.org/">nightwatch</a> mais demanderaient à être complétées
+pour devenir vraiment utiles.</p>
+<h3 id="hébergement">Hébergement</h3>
+<p>SCRIBE est hébergée sur des conteneurs Docker dans <a href="https://dsi-senat.github.io/dsi-senat/posts/docker/">nos clusters Kubernetes internes</a>. Ils sont sans état
+(<em>stateless</em>) pour le maximum de résilience : redémarrage automatique en cas de perte d&rsquo;un nœud, capacité à augmenter le
+nombre de conteneurs pour faire face à une charge exceptionnelle…</p>
+<h2 id="feuille-de-route">Feuille de route</h2>
+<p>Une phase intermédiaire a démarré durant laquelle SCRIBE est en production et permet de rédiger et corriger des comptes
+de rendu de commission. La publication finale du
+<a href="https://www.senat.fr/seances/comptes-rendus.html#commissions">bulletin des commissions</a> (sur le site web et <em>via</em>
+l&rsquo;imprimeur) se fait toujours via l&rsquo;ancien système, ce qui permet de faciliter la transition et la montée en charge.</p>
+<p>Le travail avance désormais sur les comptes rendus de séance, tout en continuant à ajouter de nouvelles fonctionnalités
+au compte rendu de commission. Les comités utilisateurs continuent à se tenir à intervalles réguliers, ce qui permet de
+réorienter certains choix en fonction des retours terrain.</p>
+<p>À terme, la publication sera entièrement réalisée dans SCRIBE. Il deviendra alors possible de gagner en fiabilité et en
+cohérence, en échangeant directement des données structurées avec nos partenaires, comme le <em>Journal Officiel</em>.</p>
+      </article>
+    </section>
+
+    
+
+    
+
+    
+  </div>
+</div>
+
+
+            <footer class="ui basic center aligned segment" style="background-color: transparent;">
+              
+              <p>© 2021 Travailler au pôle documentaire de la DSI du Sénat - Que fait un ingénieur-développeur chez nous ?</p>
+              
+
+              <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/g1eny0ung/hugo-theme-dream" target="_blank">Dream</a>.</p>
+
+              
+            </footer>
+          </div>
+        </section>
+        <section class="back">
+          <div class="dream-max-width">
+            <header class="ui basic very padded segment dream-header">
+  
+  <div class="ui small circular image">
+    <img src="https://dsi-senat.github.io/dsi-senat/dsi/dsi-docu.jpg" alt="avatar" />
+  </div>
+  
+
+  <div class="content">
+    <h1 class="ui medium header">DSI-docu<span class="sub header">Travailler au pôle documentaire de la DSI du Sénat - Que fait un ingénieur-développeur chez nous ?</span>
+    </h1>
+
+    <article class="ui horizontal list">
+      
+      <a class="item" href="https://dsi-senat.github.io/dsi-senat/posts">
+        <i class="archive icon" title="Archives"></i>
+      </a>
+      
+      <a class="item" href="https://dsi-senat.github.io/dsi-senat/categories">
+        <i class="th list icon" title="Toutes les catégories"></i>
+      </a>
+      <a class="item" href="https://dsi-senat.github.io/dsi-senat/tags">
+        <i class="tags icon" title="Tous les étiquettes"></i>
+      </a>
+    </article>
+
+    
+    
+    
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+
+    
+
+    
+    
+    
+          <div class="dream-tags">
+          
+          
+          
+            <a class="ui label" href="https://dsi-senat.github.io/dsi-senat/tags/application/" title="Application">
+              Application
+            </a>
+          
+          
+          
+            <a class="ui label" href="https://dsi-senat.github.io/dsi-senat/tags/institution/" title="institution">
+              institution
+            </a>
+          
+          
+          
+            <a class="ui label" href="https://dsi-senat.github.io/dsi-senat/tags/m%C3%A9thode/" title="méthode">
+              méthode
+            </a>
+          
+          
+          
+            <a class="ui label" href="https://dsi-senat.github.io/dsi-senat/tags/organigramme/" title="organigramme">
+              organigramme
+            </a>
+          
+          
+          
+            <a class="ui label" href="https://dsi-senat.github.io/dsi-senat/tags/prix/" title="prix">
+              prix
+            </a>
+          
+          
+          
+            <a class="ui label" href="https://dsi-senat.github.io/dsi-senat/tags/si/" title="SI">
+              SI
+            </a>
+          
+          
+          
+            <a class="ui label" href="https://dsi-senat.github.io/dsi-senat/tags/structure/" title="Structure">
+              Structure
+            </a>
+          
+          </div>
+    
+
+    
+  </div>
+</header>
+
+
+<div class="ui relaxed grid dream-grid dream-back">
+  
+  
+  
+  <div class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
+    <article class="ui segment markdown-body">
+      <div class="ui medium header">DSI-docu</div>
+      <p>Ce site est réalisé par l&rsquo;équipe documentaire de la DSI du Sénat. Il présente l&rsquo;activité d&rsquo;un ingénieur-développeur en
+son sein à travers la description des méthodes de travail et de quelques projets emblématiques sur lesquels il pourra
+travailler.</p>
+<p>Pout tout renseignement, vous pouvez écrire à <a href="mailto:s.dubourg@senat.fr">s.dubourg@senat.fr</a></p>
+
+    </article>
+  </div>
+  
+  <div class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
+    <article class="ui segment markdown-body">
+      <div class="ui medium header">Credits</div>
+      <p>Merci aux personnes dont les contributions nous ont été utiles pour la réalisation ce ce site.</p>
+<ul>
+<li>L'<a href="https://dsi-senat.github.io/dsi-senat/dsi/background.jpg">image de fond</a> est (c) Sénat.</li>
+<li>Le modèle de page, <a href="https://github.com/g1eny0ung/hugo-theme-dream">dream</a>,
+a été réalisé par <a href="https://g1eny0ung.site/">杨钺</a>, merci à lui pour sa
+réactivité.</li>
+<li>Le générateur de pages statiques est <a href="https://gohugo.io/">Hugo</a>, logiciel
+libre.</li>
+<li>L&rsquo;hébergeur est <a href="https://github.com/">Github</a>.</li>
+</ul>
+    </article>
+  </div>
+  
+
+  <div class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
+    <article class="ui segment">
+      <div class="ui medium header">Liens sociaux</div>
+      <nav class="ui secondary menu dream-menu dream-socials">
+  
+  <a class="item" href="https://dsi-senat.github.io/dsi-senat/index.xml">
+    <i class="large rss square icon" title="RSS"></i>
+  </a>
+  
+
+  
+  <a class="item" href="mailto:sebastien@dubourg.name">
+    <i class="large mail icon" title="Email"></i>
+  </a>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <a class="item" href="https://github.com/dsi-senat" target="_blank">
+    <i class="large github icon" title="GitHub"></i>
+  </a>
+  
+
+  
+
+  
+
+  
+</nav>
+
+    </article>
+  </div>
+
+  <div class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
+    
+    <article class="ui segment">
+      Le contenu de ce site ne peut être ré-utilisé qu'après autorisation. Merci d'écrire à s.dubourg@senat.fr si besoin.
+    </article>
+    
+  </div>
+
+  
+</div>
+
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+
+    
+    <div class="ui segment" id="dream-search">
+  <div class="ui search">
+    <div class="ui transparent input">
+      <input class="prompt" type="text" placeholder="Search" />
+    </div>
+    <div class="results"></div>
+  </div>
+</div>
+<script>
+  $(document).ready(function () {
+    $.getJSON('https:\/\/dsi-senat.github.io\/dsi-senat\//index.json', function (data) {
+      $('.ui.search').search({
+        source: data,
+        searchFields: ['title'],
+        showNoResults: false,
+      })
+    })
+  })
+</script>
+<script src="https://dsi-senat.github.io/dsi-senat/js/search.js"></script>
+
+    
+
+    
+
+    <script>
+  window.background = "#fff"
+  window.defaultDark =  null 
+  window.backgroundDark =  null 
+  window.backgroundImageDark =  null 
+  window.darkNav =  null 
+  window.maxTags =  null 
+  window.hasTwitterEmbed =  null 
+  window.fixedNav =  null 
+
+  if (window.hasTwitterEmbed) {
+    
+    window.twttr = (function (d, s, id) {
+      var js,
+        fjs = d.getElementsByTagName(s)[0],
+        t = window.twttr || {}
+      if (d.getElementById(id)) return t
+      js = d.createElement(s)
+      js.id = id
+      js.src = 'https://platform.twitter.com/widgets.js'
+      fjs.parentNode.insertBefore(js, fjs)
+
+      t._e = []
+      t.ready = function (f) {
+        t._e.push(f)
+      }
+
+      return t
+    })(document, 'script', 'twitter-wjs')
+  }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/overlayscrollbars@1.13.1/js/jquery.overlayScrollbars.min.js"></script>
+<script src="https://dsi-senat.github.io/dsi-senat/js/header.js"></script>
+<script src="https://dsi-senat.github.io/dsi-senat/js/main.js"></script>
+<script src="https://dsi-senat.github.io/dsi-senat/js/theme.js"></script>
+
+    
+
+
+<script src="https://cdn.jsdelivr.net/npm/luxon@1.26.0"></script>
+
+<script>
+  format()
+
+  function format() {
+    $('span[data-format="luxon"]').each(function () {
+      var date = $(this).text()
+
+      $(this).text(luxon.DateTime.fromISO(date, { locale: "fr" }).toFormat("yyyy-MM-dd"))
+    })
+  }
+</script>
+
+
+
+<script src="https://dsi-senat.github.io/dsi-senat/js/scrollToTop.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.1"></script>
+<script src="https://dsi-senat.github.io/dsi-senat/js/post.js" defer></script>
+
+
+    
+
+    
+  </body>
+</html>
